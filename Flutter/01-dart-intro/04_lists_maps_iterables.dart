@@ -9,11 +9,11 @@ void main(){
 
   final reversedNumbers = numbers.reversed;
 
-  print("Iterable: $reversedNumbers");
-  print("List: ${reversedNumbers.toList()}");
-  print("Set: ${reversedNumbers.toSet()}");
+  print("Iterable: $reversedNumbers");//()
+  print("List: ${reversedNumbers.toList()}");//[]
+  print("Set: ${reversedNumbers.toSet()}");//() pero sin repetición
 
-  final numbersGreaterThan5 = numbers.where((num) {
+  final numbersGreaterThan5 = numbers.where((int num) {
     return num>5; //true
   });
 
