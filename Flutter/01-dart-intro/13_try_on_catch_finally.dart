@@ -1,4 +1,4 @@
-//Futures es como las promesas en dart
+//En este caso estamos haciendo uso de try y catch, que tiene más usos como el on y el finally
 
 void main() async{
    print("Inidico del programa");
@@ -8,9 +8,13 @@ void main() async{
   try{
     final value = await httpGet("https://facebook.com");
 
-      print(value);
+      print("éxito: $value");
+  }on Exception catch(err) {
+    print("Tenemos una Exception: $err");
   }catch(err){
     print("El error es: $err");
+  }finally{
+    print("Fin del Try y catch");
   }
   
 
@@ -21,7 +25,9 @@ void main() async{
 
  Future<String> httpGet(String url) async{
     await Future.delayed(const Duration(seconds: 1));
-    throw ("Error");
+
+    throw Exception("No hay parámetros en el URL");
+
     //return "Tenemos un valor de la petición";
 
       
